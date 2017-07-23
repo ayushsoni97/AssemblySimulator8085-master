@@ -1,0 +1,10 @@
+START 25
+EXTERN? b
+MOV A, b
+ADDI 2
+MOV b, A
+MOV A, b
+LI D, 2
+MOV C, b
+SYSCALL
+HLT

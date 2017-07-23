@@ -1,0 +1,13 @@
+ORIGIN:
+DB a 5
+DB b  6
+DB c  0
+MOV A, 0x11
+MOV B, 0xf
+SUB B
+MOV 0x13, A
+MOV A, 0x13
+LI D, 2
+MOV C, 0x13
+SYSCALL
+END:

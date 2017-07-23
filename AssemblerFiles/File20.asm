@@ -1,0 +1,13 @@
+START 20
+MOV A, a
+MOV B, b
+ADD B
+MOV c, A
+MOV A, c
+LI D, 2
+MOV C, c
+SYSCALL
+a DB  5
+b DB  4
+c DB  0
+HLT

@@ -1,0 +1,23 @@
+ORIGIN:
+MOV A, v
+MOV B, a
+ADD B
+MOV g, A
+LTORG
+MOV A, g
+LI D, 2
+MOV C, g
+SYSCALL
+MOV A, u
+MOV B, g
+SUB B
+MOV u, A
+MOV A, u
+LI D, 2
+MOV C, u
+SYSCALL
+a DB  5
+v DB  6
+g DB  0
+u DB  19
+END:

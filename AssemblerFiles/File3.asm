@@ -1,0 +1,12 @@
+ORIGIN:
+DB c  0
+DB a  5
+MOV A, a
+MOV B, c
+SUB B
+MOV a, A
+MOV A, a
+LI D, 2
+MOV C, A
+SYSCALL
+END:

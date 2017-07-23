@@ -1,0 +1,70 @@
+START 25
+LTORG
+MOV A, a
+MOV B, b
+ADD B
+MOV c, A
+MOV A, b
+MOV B, a
+SUB B
+MOV b, A
+MOV A, a
+ADDI 2
+MOV a, A
+LI A, 2
+LI B, 4
+ORA B
+MOV logic, A
+MOV A, logic
+LI D, 2
+MOV C, logic
+SYSCALL
+MVI C, 10
+LOOP1:
+PUSH 0x38
+LI D, 0x4
+MOV C, WORD1
+SYSCALL
+DCR C
+JNZ LOOP1
+POP
+MOV A, a
+MOV B, b
+SUB B
+PUSH 0x48
+
+JN ELSECONDITON1
+JZ ELSECONDITON1
+MOV A, a
+SUI 2
+MOV a, A
+PUSH 0x4c
+
+JMP ENDCONDITON1
+POP
+ELSECONDITON1:
+
+MOV A, a
+ADDI 2
+MOV a, A
+ENDCONDITON1:
+
+MACRO
+sum &r, &t, &y
+MOV A, &t
+MOV B, &y
+ADD B
+MOV &r, A
+MEND
+sum a, 23, 3
+sum b, 2, 5
+LI D, 0x4
+MOV C, WORD2
+SYSCALL
+a DB  5
+b DB  6
+c DB  0
+logic DB  0
+WORD1 DB 'loop' 4
+WORD2 DB 'done' 4
+HLT

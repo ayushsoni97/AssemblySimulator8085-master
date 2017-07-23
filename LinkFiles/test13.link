@@ -1,0 +1,13 @@
+START 40
+LDA b
+MOV b, A
+
+MOV A, b
+ADDI 2
+MOV b, A
+MOV A, b
+LI D, 2
+MOV C, b
+SYSCALL
+HLT
+
